@@ -6,13 +6,16 @@
   "bin": {
     "wsy-cli": "bin/www.js"
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "files": [
     "./bin",
     "./src"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "exclude": [
+    "./node_modules"
+  ],
   "keywords": [],
   "repository": {
     "type": "git",
