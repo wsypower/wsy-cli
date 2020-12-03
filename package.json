@@ -1,6 +1,6 @@
 {
   "name": "wsy-cli",
-  "version": "0.1.0--alpha.1",
+  "version": "1.0.0",
   "description": "wsy脚手架",
   "main": "index.js",
   "bin": {
