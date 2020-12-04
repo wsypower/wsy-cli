@@ -14,19 +14,19 @@ program
   .option("-y,--yes", "run default action")
   .option("-h,--help", "run default action")
   .option("-f, --force", "force all the question");
-
 /**
  * wsy-cli commands
  *    - config
  *    - init
  */
-Object.keys(command).forEach((action) => {
+Object.keys(command).forEach((commandCmdKey, index) => {
+  const { action, description, alias } = command[commandCmdKey];
   program
     .command(action)
-    .description(command[action].description)
-    .alias(command[action].alias)
+    .description(description)
+    .alias(alias)
     .action((source, destination) => {
-      apply(action, destination);
+      apply(commandCmdKey, destination);
     });
 });
 

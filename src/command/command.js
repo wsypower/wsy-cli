@@ -1,11 +1,13 @@
 // TODO alias 不能和指令重复
 module.exports = {
   init: {
+    action: "init",
     alias: "i",
     description: "generate a new project from a template",
     usages: ["wsy init templateName projectName"],
   },
   config: {
+    action: "config",
     alias: "cfg",
     description: "config .eosrc",
     usages: [
