@@ -25,8 +25,10 @@ Object.keys(command).forEach((commandCmdKey, index) => {
     .command(action)
     .description(description)
     .alias(alias)
-    .action((source, destination) => {
-      apply(commandCmdKey, destination);
+    .action((source) => {
+      // [] 代表选填，<> 代表必填项
+      // source 输入的指令
+      apply(commandCmdKey, source);
     });
 });
 
