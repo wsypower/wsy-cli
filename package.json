@@ -23,5 +23,8 @@
   },
   "author": "weiyafei <2553241022@qq.com>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "@types/commander": "^2.12.2",
+    "commander": "^6.2.0"
+  }
 }

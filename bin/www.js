@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-console.log("Hello,my bin/www.js!");
+require("../src/main.js");
