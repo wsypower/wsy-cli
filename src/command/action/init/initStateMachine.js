@@ -28,9 +28,10 @@ module.exports = StateMachine.factory({
     };
   },
   transitions: [
-    { name: "init", from: "none", to: "name" },
-    { name: "create", from: "name", to: "path" },
-    { name: "finish", from: "path", to: "result" },
+    { name: "init", from: "none", to: "createDirName" },
+    { name: "create", from: "createDirName", to: "createDir" },
+    { name: "down", from: "createDir", to: "downLoadGitTemplate" },
+    { name: "finish", from: "downLoadGitTemplate", to: "finish" },
   ],
   methods: {
     // 检测是否有名称
@@ -38,14 +39,14 @@ module.exports = StateMachine.factory({
     onBeforeInit() {
       return new Promise(async (resolve, reject) => {
         try {
-          // 检测项目
+          // 检测项目名
           await this.setProjectName();
           // 检测有无相同文件
           await this.hasProjectName();
           // 设置 [package] - [description]、[author]
           await this.getDescriptionAndAuthor();
         } catch (error) {
-          reject(error);
+          reject(false);
         }
         resolve();
       });
